@@ -8,7 +8,7 @@ const features = [
     details:
       'Tworzymy strony internetowe, które nie tylko wyglądają świetnie, ale działają płynnie na wszystkich urządzeniach. Twoja strona będzie odzwierciedlać unikalną tożsamość Twojej marki.',
     tutorialLink: '#',
-    image: './public/stronyInternetowe.png',
+    image: './stronyInternetowe.png',
   },
   {
     category: 'Sklepy internetowe',
@@ -16,7 +16,7 @@ const features = [
     details:
       'Uruchom swój sklep w sieci szybko i bez komplikacji, z bezpiecznymi płatnościami i łatwym zarządzaniem produktami. Maksymalizuj sprzedaż przy minimalnym wysiłku.',
     tutorialLink: '#',
-    image: './public/sklepyInternetowe.png',
+    image: './sklepyInternetowe.png',
   },
   {
     category: 'Marketing cyfrowy',
@@ -24,7 +24,7 @@ const features = [
     details:
       'Od kampanii w social media po SEO - pomagamy Twojej marce dotrzeć do odpowiednich odbiorców, zwiększać zaangażowanie i konwersje.',
     tutorialLink: '#',
-    image: './public/marketingCyfrowy.png',
+    image: './marketingCyfrowy.png',
   },
   {
     category: 'Projekty graficzne',
@@ -32,7 +32,7 @@ const features = [
     details:
       'Pomagamy firmom określić głos marki, tożsamość wizualną i obecność w sieci, tworząc spójną i zapadającą w pamięć historię marki.',
     tutorialLink: '#',
-    image: './public/projektyGraficzne.png',
+    image: './projektyGraficzne.png',
   },
 ];
 
