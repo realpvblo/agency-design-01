@@ -1,4 +1,12 @@
-import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo, FC, ReactNode } from 'react';
+import {
+  forwardRef,
+  useImperativeHandle,
+  useEffect,
+  useRef,
+  useMemo,
+  type FC,
+  type ReactNode,
+} from 'react';
 
 import * as THREE from 'three';
 
@@ -24,13 +32,18 @@ type ShaderWithDefines = THREE.ShaderLibShader & {
 
 function extendMaterial<T extends THREE.Material = THREE.Material>(
   BaseMaterial: new (params?: THREE.MaterialParameters) => T,
-  cfg: ExtendMaterialConfig
+  cfg: ExtendMaterialConfig,
 ): THREE.ShaderMaterial {
   const physical = THREE.ShaderLib.physical as ShaderWithDefines;
-  const { vertexShader: baseVert, fragmentShader: baseFrag, uniforms: baseUniforms } = physical;
+  const {
+    vertexShader: baseVert,
+    fragmentShader: baseFrag,
+    uniforms: baseUniforms,
+  } = physical;
   const baseDefines = physical.defines ?? {};
 
-  const uniforms: Record<string, THREE.IUniform> = THREE.UniformsUtils.clone(baseUniforms);
+  const uniforms: Record<string, THREE.IUniform> =
+    THREE.UniformsUtils.clone(baseUniforms);
 
   const defaults = new BaseMaterial(cfg.material || {}) as T & {
     color?: THREE.Color;
@@ -44,7 +57,8 @@ function extendMaterial<T extends THREE.Material = THREE.Material>(
   if ('roughness' in defaults) uniforms.roughness.value = defaults.roughness;
   if ('metalness' in defaults) uniforms.metalness.value = defaults.metalness;
   if ('envMap' in defaults) uniforms.envMap.value = defaults.envMap;
-  if ('envMapIntensity' in defaults) uniforms.envMapIntensity.value = defaults.envMapIntensity;
+  if ('envMapIntensity' in defaults)
+    uniforms.envMapIntensity.value = defaults.envMapIntensity;
 
   Object.entries(cfg.uniforms ?? {}).forEach(([key, u]) => {
     uniforms[key] =
@@ -69,7 +83,7 @@ function extendMaterial<T extends THREE.Material = THREE.Material>(
     vertexShader: vert,
     fragmentShader: frag,
     lights: true,
-    fog: !!cfg.material?.fog
+    fog: !!cfg.material?.fog,
   });
 
   return mat;
@@ -185,9 +199,11 @@ const Beams: FC<BeamsProps> = ({
   speed = 2,
   noiseIntensity = 1.75,
   scale = 0.2,
-  rotation = 0
+  rotation = 0,
 }) => {
-  const meshRef = useRef<THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>>(null!);
+  const meshRef = useRef<
+    THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>
+  >(null!);
 
   const beamMaterial = useMemo(
     () =>
@@ -224,12 +240,12 @@ const Beams: FC<BeamsProps> = ({
         fragmentHeader: '',
         vertex: {
           '#include <begin_vertex>': `transformed.z += getPos(transformed.xyz);`,
-          '#include <beginnormal_vertex>': `objectNormal = getNormal(position.xyz);`
+          '#include <beginnormal_vertex>': `objectNormal = getNormal(position.xyz);`,
         },
         fragment: {
           '#include <dithering_fragment>': `
     float randomNoise = noise(gl_FragCoord.xy);
-    gl_FragColor.rgb -= randomNoise / 15. * uNoiseIntensity;`
+    gl_FragColor.rgb -= randomNoise / 15. * uNoiseIntensity;`,
         },
         material: { fog: true },
         uniforms: {
@@ -240,16 +256,22 @@ const Beams: FC<BeamsProps> = ({
           uSpeed: { shared: true, mixed: true, linked: true, value: speed },
           envMapIntensity: 10,
           uNoiseIntensity: noiseIntensity,
-          uScale: scale
-        }
+          uScale: scale,
+        },
       }),
-    [speed, noiseIntensity, scale]
+    [speed, noiseIntensity, scale],
   );
 
   return (
     <CanvasWrapper>
       <group rotation={[0, 0, degToRad(rotation)]}>
-        <PlaneNoise ref={meshRef} material={beamMaterial} count={beamNumber} width={beamWidth} height={beamHeight} />
+        <PlaneNoise
+          ref={meshRef}
+          material={beamMaterial}
+          count={beamNumber}
+          width={beamWidth}
+          height={beamHeight}
+        />
         <DirLight color={lightColor} position={[0, 3, 10]} />
       </group>
       <ambientLight intensity={1} />
@@ -264,7 +286,7 @@ function createStackedPlanesBufferGeometry(
   width: number,
   height: number,
   spacing: number,
-  heightSegments: number
+  heightSegments: number,
 ): THREE.BufferGeometry {
   const geometry = new THREE.BufferGeometry();
   const numVertices = n * (heightSegments + 1) * 2;
@@ -291,7 +313,10 @@ function createStackedPlanesBufferGeometry(
       positions.set([...v0, ...v1], vertexOffset * 3);
 
       const uvY = j / heightSegments;
-      uvs.set([uvXOffset, uvY + uvYOffset, uvXOffset + 1, uvY + uvYOffset], uvOffset);
+      uvs.set(
+        [uvXOffset, uvY + uvYOffset, uvXOffset + 1, uvY + uvYOffset],
+        uvOffset,
+      );
 
       if (j < heightSegments) {
         const a = vertexOffset,
@@ -322,11 +347,13 @@ const MergedPlanes = forwardRef<
     height: number;
   }
 >(({ material, width, count, height }, ref) => {
-  const mesh = useRef<THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>>(null!);
+  const mesh = useRef<THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>>(
+    null!,
+  );
   useImperativeHandle(ref, () => mesh.current);
   const geometry = useMemo(
     () => createStackedPlanesBufferGeometry(count, width, height, 0, 100),
-    [count, width, height]
+    [count, width, height],
   );
   useFrame((_, delta) => {
     mesh.current.material.uniforms.time.value += 0.1 * delta;
@@ -344,11 +371,20 @@ const PlaneNoise = forwardRef<
     height: number;
   }
 >((props, ref) => (
-  <MergedPlanes ref={ref} material={props.material} width={props.width} count={props.count} height={props.height} />
+  <MergedPlanes
+    ref={ref}
+    material={props.material}
+    width={props.width}
+    count={props.count}
+    height={props.height}
+  />
 ));
 PlaneNoise.displayName = 'PlaneNoise';
 
-const DirLight: FC<{ position: [number, number, number]; color: string }> = ({ position, color }) => {
+const DirLight: FC<{ position: [number, number, number]; color: string }> = ({
+  position,
+  color,
+}) => {
   const dir = useRef<THREE.DirectionalLight>(null!);
   useEffect(() => {
     if (!dir.current) return;
@@ -366,7 +402,14 @@ const DirLight: FC<{ position: [number, number, number]; color: string }> = ({ p
     cam.far = 64;
     dir.current.shadow.bias = -0.004;
   }, []);
-  return <directionalLight ref={dir} color={color} intensity={1} position={position} />;
+  return (
+    <directionalLight
+      ref={dir}
+      color={color}
+      intensity={1}
+      position={position}
+    />
+  );
 };
 
 export default Beams;
