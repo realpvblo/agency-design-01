@@ -1,16 +1,10 @@
 import './App.css';
-import { Button } from '@/components/ui/button';
-import Beams from './components/Beams';
-import { Badge } from '@/components/ui/badge';
-import SplitText from './components/SplitText';
 import AnimatedContent from './components/AnimatedContent';
-import FadeContent from './components/FadeContent';
 import Pricing06 from './components/pricing/pricing';
 import Footer05Page from './components/footer-05/footer-05';
 import Features06Page from './components/features-06/features-06';
 import { Gallery6 } from './components/gallery6/gallery6';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
-import { RainbowButton } from '@/components/ui/rainbow-button';
 import Hero01 from './components/hero-01/hero-01';
 import Logos01Page from './components/logos-01/logos-01';
 import FeaturesSection from './components/features-8';

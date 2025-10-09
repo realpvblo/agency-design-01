@@ -1,8 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ArrowUpRight, CircleChevronDown, CirclePlay } from 'lucide-react';
-import React from 'react';
-import Iridescence from '../Iridescence';
 import AnimatedContent from '../AnimatedContent';
 import Prism from '../Prism';
 import { RainbowButton } from '../ui/rainbow-button';
