@@ -11,19 +11,27 @@ import Features06Page from './components/features-06/features-06';
 import { Gallery6 } from './components/gallery6/gallery6';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { RainbowButton } from '@/components/ui/rainbow-button';
+import Hero01 from './components/hero-01/hero-01';
+import Logos01Page from './components/logos-01/logos-01';
+import FeaturesSection from './components/features-8';
+import Features from './components/features-12';
+import Navbar04Page from './components/navbar-04/navbar-04';
+import Contact02Page from './components/contact-02/contact-02';
+import PricingPage from './components/mvpblocks/pricing-glassmorphism';
 
 function App() {
-  function handleAnimationComplete(): void {
-    throw new Error('Function not implemented.');
-  }
+  // function handleAnimationComplete(): void {
+  //   throw new Error('Function not implemented.');
+  // }
 
   return (
     <>
       <ScrollProgress />
-      <div className="bg-black text-white flex flex-col items-center">
+      <div className=" flex flex-col items-center">
+        <Navbar04Page />
         {/* HERO SECTION */}
-        <div className="relative flex flex-col min-h-screen items-center justify-center text-center gap-5 w-full overflow-hidden">
-          {/* NAVBAR */}
+        {/* <div className="relative flex flex-col min-h-screen items-center justify-center text-center gap-5 w-full overflow-hidden">
+          
           <div className="fixed z-50 backdrop-blur-md p-3 top-6 mx-auto flex gap-5 items-center bg-black/50 justify-between rounded-xl">
             <a href="#home">
               <img src="/vite.svg" alt="" />
@@ -46,7 +54,7 @@ function App() {
             <Button className="cursor-pointer">Kontakt</Button>
           </div>
 
-          {/* BACKGROUND EFFECT */}
+          
           <div
             id="home"
             className="absolute inset-0 w-full h-full overflow-hidden"
@@ -63,7 +71,7 @@ function App() {
             />
           </div>
 
-          {/* HERO CONTENT */}
+          
           <div className="z-10 text-center p-5 m-auto flex flex-col max-w-4xl align-middle items-center">
             <FadeContent
               blur={true}
@@ -134,13 +142,16 @@ function App() {
               </RainbowButton>
             </AnimatedContent>
           </div>
+        </div> */}
+
+        <div className="relative flex flex-col min-h-screen items-center justify-center text-center gap-5 w-full overflow-hidden rounded-t-none rounded-b-[24px]">
+          <Hero01 />
         </div>
 
-        {/* Divider */}
-        <hr className="faded-line w-full" />
+        <Logos01Page />
 
         {/* INTRO SECTION (full screen, centered) */}
-        <section className="w-full flex items-center justify-center min-h-screen px-5">
+        {/* <section className="w-full flex items-center justify-center min-h-screen px-5">
           <div className="max-w-3xl text-center">
             <SplitText
               text="Nowoczesne strony i sklepy internetowe - zaprojektowane i stworzone tak, aby wyróżnić Cię w świecie cyfrowym."
@@ -156,33 +167,26 @@ function App() {
               textAlign="center"
             />
           </div>
-        </section>
+        </section> */}
 
-        {/* Divider */}
-        <hr className="faded-line w-full" />
+        <div className="w-full bg-gray-100 dark:bg-neutral-900 rounded-3xl">
+          <FeaturesSection />
+        </div>
 
         {/* FEATURES SECTION */}
         <section
           id="services"
           className="w-full flex items-center justify-center py-20 md:py-32"
         >
-          <AnimatedContent
-            distance={50}
-            direction="vertical"
-            duration={1.2}
-            ease="power3.out"
-            initialOpacity={0}
-            animateOpacity
-            scale={1.1}
-            threshold={0.2}
-            delay={0.3}
-          >
-            <Features06Page />
-          </AnimatedContent>
+          <Features06Page />
         </section>
 
         {/* Divider */}
-        <hr className="faded-line w-full" />
+        {/* <hr className="faded-line w-full" /> */}
+
+        <div className="w-full bg-gray-100 dark:bg-neutral-900 rounded-3xl">
+          <Features />
+        </div>
 
         {/* PORTFOLIO SECTION */}
         <section
@@ -205,7 +209,7 @@ function App() {
         </section>
 
         {/* Divider */}
-        <hr className="faded-line w-full" />
+        {/* <hr className="faded-line w-full" /> */}
 
         {/* PRICING SECTION */}
         <section
@@ -226,6 +230,9 @@ function App() {
             <Pricing06 />
           </AnimatedContent>
         </section>
+        <PricingPage />
+
+        <Contact02Page />
       </div>
 
       {/* FOOTER */}
