@@ -1,9 +1,9 @@
 import './App.css';
 import AnimatedContent from './components/AnimatedContent';
-import Pricing06 from './components/pricing/pricing';
+// import Pricing06 from './components/pricing/pricing';
 import Footer05Page from './components/footer-05/footer-05';
 import Features06Page from './components/features-06/features-06';
-import { Gallery6 } from './components/gallery6/gallery6';
+// import { Gallery6 } from './components/gallery6/gallery6';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import Hero01 from './components/hero-01/hero-01';
 import Logos01Page from './components/logos-01/logos-01';
@@ -12,6 +12,8 @@ import Features from './components/features-12';
 import Navbar04Page from './components/navbar-04/navbar-04';
 import Contact02Page from './components/contact-02/contact-02';
 import PricingPage from './components/mvpblocks/pricing-glassmorphism';
+// import SlideOpacity from './components/customized/carousel/carousel-10';
+import CarouselWithMultipleSlides from './components/customized/carousel/carousel-02';
 
 function App() {
   // function handleAnimationComplete(): void {
@@ -183,7 +185,7 @@ function App() {
         </div>
 
         {/* PORTFOLIO SECTION */}
-        <section
+        {/* <section
           id="portfolio"
           className="w-full flex items-center justify-center py-20 md:py-32"
         >
@@ -200,13 +202,27 @@ function App() {
           >
             <Gallery6 />
           </AnimatedContent>
-        </section>
+        </section> */}
+
+        {/* <SlideOpacity /> */}
+
+<AnimatedContent
+            distance={50}
+            duration={1.2}
+            ease="power3.out"
+            scale={1.1}
+            threshold={0.2}
+            delay={0.3}
+          >
+        <CarouselWithMultipleSlides />
+
+          </AnimatedContent>
 
         {/* Divider */}
         {/* <hr className="faded-line w-full" /> */}
 
         {/* PRICING SECTION */}
-        <section
+        {/* <section
           id="pricing"
           className="w-full flex items-center justify-center py-20 md:py-32"
         >
@@ -223,8 +239,18 @@ function App() {
           >
             <Pricing06 />
           </AnimatedContent>
-        </section>
-        <PricingPage />
+        </section> */}
+        <AnimatedContent
+            distance={50}
+            duration={1.2}
+            ease="power3.out"
+            scale={1.1}
+            threshold={0.2}
+            delay={0.3}
+          >
+<PricingPage />
+          </AnimatedContent>
+        
 
         <Contact02Page />
       </div>

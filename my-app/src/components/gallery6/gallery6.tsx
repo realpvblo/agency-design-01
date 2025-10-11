@@ -28,13 +28,13 @@ interface Gallery6Props {
 const Gallery6 = ({
   heading = 'Portfolio',
   items = [
-    {
-      id: 'item-0',
-      title: null,
-      summary: null,
-      url: null,
-      image: null,
-    },
+    // {
+    //   id: 'item-0',
+    //   title: null,
+    //   summary: null,
+    //   url: null,
+    //   image: null,
+    // },
     {
       id: 'item-1',
       title: 'Wkręceni w Eko',
@@ -75,13 +75,13 @@ const Gallery6 = ({
       url: '#',
       image: './portfolio/oliwa-menu.jpg',
     },
-    {
-      id: 'item-6',
-      title: null,
-      summary: null,
-      url: null,
-      image: null,
-    },
+    // {
+    //   id: 'item-6',
+    //   title: null,
+    //   summary: null,
+    //   url: null,
+    //   image: null,
+    // },
   ],
 }: Gallery6Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();

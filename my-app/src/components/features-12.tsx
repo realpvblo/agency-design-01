@@ -5,10 +5,14 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import {
-  ChartBarIncreasingIcon,
-  Database,
-  Fingerprint,
-  IdCard,
+  // ChartBarIncreasingIcon,
+  // Database,
+  // Fingerprint,
+  // IdCard,
+  Keyboard,
+  LifeBuoy,
+  PencilRuler,
+  PhoneCall,
 } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -20,19 +24,19 @@ export default function Features() {
 
   const images = {
     'item-1': {
-      image: '/charts.png',
+      image: 'https://plus.unsplash.com/premium_photo-1682310473661-7a334b46e164?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1812',
       alt: 'Database visualization',
     },
     'item-2': {
-      image: '/music.png',
+      image: 'https://images.unsplash.com/photo-1760008486599-e62d30e2ca95?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1932',
       alt: 'Security authentication',
     },
     'item-3': {
-      image: '/mail2.png',
+      image: 'https://plus.unsplash.com/premium_photo-1682130130215-98574e89ab71?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1742',
       alt: 'Identity management',
     },
     'item-4': {
-      image: '/payments.png',
+      image: 'https://images.unsplash.com/photo-1573165265437-f5e267bb3db6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1738',
       alt: 'Analytics dashboard',
     },
   };
@@ -43,12 +47,10 @@ export default function Features() {
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
         <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-6xl">
-            The foundation for AI
+            Proces
           </h2>
           <p>
-            Lyra is evolving to be more than just the models. It supports an
-            entire suite of APIs and platforms helping developers and businesses
-            innovate.
+            Poznaj nasz sprawdzony proces realizacji projektów, który gwarantuje efektywność i satysfakcję na każdym etapie współpracy.
           </p>
         </div>
 
@@ -63,47 +65,45 @@ export default function Features() {
             <AccordionItem value="item-1">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
-                  <Database className="size-4" />
-                  Database Visualization
+                  <PhoneCall className="size-4" />
+                  Kontakt i omówienie projektu
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire suite of APIs and platforms helping developers and
-                businesses innovate.
+                Rozmawiamy o Twoich potrzebach, analizujemy cele projektu i ustalamy jego zakres. To moment, w którym poznajemy Twoją wizję.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
-                  <Fingerprint className="size-4" />
-                  Advanced Authentication
+                  <PencilRuler className="size-4" />
+                  Projektowanie i przygotowanie koncepcji
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Secure your applications with advanced authentication features.
+                Tworzymy propozycje graficzne, układy i szablony. Prezentujemy wstępne wersje, abyś mógł zobaczyć kierunek projektu.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
-                  <IdCard className="size-4" />
-                  Identity Management
+                  <Keyboard className="size-4" />
+                  Realizacja i wdrożenie
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Manage user identities efficiently with modern, scalable tools.
+                Po akceptacji projektu przechodzimy do wdrożenia. Pracujemy nad stroną, aplikacją lub kampanią, dbając o każdy detal.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
-                  <ChartBarIncreasingIcon className="size-4" />
-                  Analytics Dashboard
+                  <LifeBuoy className="size-4" />
+                  Poprawki i wsparcie
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Gain insights with real-time analytics dashboards and reporting.
+                Wprowadzamy ewentualne poprawki, zapewniamy szkolenie z obsługi oraz stałe wsparcie po uruchomieniu projektu.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
