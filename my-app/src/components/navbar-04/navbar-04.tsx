@@ -13,7 +13,7 @@ const Navbar04Page = () => {
           backdrop-blur-xl
           border border-white/30 dark:border-slate-800/50
           shadow-lg shadow-black/5
-          max-w-(--breakpoint-xl) mx-auto
+          max-w-(--breakpoint-lg) mx-auto
           rounded-full
           transition-all duration-300
         "

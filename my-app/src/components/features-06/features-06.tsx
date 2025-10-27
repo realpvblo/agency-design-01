@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+// import { Button } from '@/components/ui/button';
+// import { ArrowRight } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
 
 const features = [
@@ -94,11 +94,11 @@ const Features06Page = () => {
                     {feature.title}
                   </h4>
                   <p className="text-muted-foreground">{feature.details}</p>
-                  <Button asChild size="lg" className="mt-6 rounded-full gap-3">
+                  {/* <Button asChild size="lg" className="mt-6 rounded-full gap-3">
                     <a href={feature.tutorialLink}>
                       Dowiedz się więcej <ArrowRight />
                     </a>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             ))}

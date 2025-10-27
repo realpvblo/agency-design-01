@@ -31,13 +31,13 @@ const Contact02Page = () => (
             </div>
             <h3 className="mt-6 font-semibold text-xl">Email</h3>
             <p className="my-2.5 text-muted-foreground">
-              Our friendly team is here to help.
+              Odpowiadamy w ciągu 24 godzin.
             </p>
             <a
               className="font-medium text-primary"
               href="mailto:akashmoradiya3444@gmail.com"
             >
-              akashmoradiya3444@gmail.com
+              kontakt@studiomango.pl
             </a>
           </div>
 
@@ -45,12 +45,12 @@ const Contact02Page = () => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MessageCircle />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">Live chat</h3>
+            <h3 className="mt-6 font-semibold text-xl">Chat Messenger</h3>
             <p className="my-2.5 text-muted-foreground">
-              Our friendly team is here to help.
+              Skontaktuj się z nami przez Facebook.
             </p>
             <a className="font-medium text-primary" href="#">
-              Start new chat
+              Napisz do nas
             </a>
           </div>
 
@@ -58,9 +58,9 @@ const Contact02Page = () => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MapPinIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">Office</h3>
+            <h3 className="mt-6 font-semibold text-xl">Biuro</h3>
             <p className="my-2.5 text-muted-foreground">
-              Come say hello at our office HQ.
+              Odwiedź nas stacjonarnie.
             </p>
             <a
               className="font-medium text-primary"
@@ -68,7 +68,7 @@ const Contact02Page = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              100 Smith Street Collingwood <br /> VIC 3066 AU
+              Lorem ipsum <br /> dolor sit amet
             </a>
           </div>
 
@@ -76,12 +76,12 @@ const Contact02Page = () => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <PhoneIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">Phone</h3>
+            <h3 className="mt-6 font-semibold text-xl">Telefon</h3>
             <p className="my-2.5 text-muted-foreground">
-              Mon-Fri from 8am to 5pm.
+              Pon-Pt 8-16
             </p>
             <a className="font-medium text-primary" href="tel:+15550000000">
-              +1 (555) 000-0000
+              +48 123 456 789
             </a>
           </div>
         </div>
@@ -92,17 +92,17 @@ const Contact02Page = () => (
             <form>
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
                 <div className="col-span-2 sm:col-span-1">
-                  <Label htmlFor="firstName">First Name</Label>
+                  <Label htmlFor="firstName">Imię</Label>
                   <Input
-                    placeholder="First name"
+                    placeholder="Imię"
                     id="firstName"
                     className="mt-2 bg-white/80 h-10 shadow-none"
                   />
                 </div>
                 <div className="col-span-2 sm:col-span-1">
-                  <Label htmlFor="lastName">Last Name</Label>
+                  <Label htmlFor="lastName">Nazwisko</Label>
                   <Input
-                    placeholder="Last name"
+                    placeholder="Nazwisko"
                     id="lastName"
                     className="mt-2 bg-white/80 h-10 shadow-none"
                   />
@@ -117,10 +117,19 @@ const Contact02Page = () => (
                   />
                 </div>
                 <div className="col-span-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="phone">Telefon</Label>
+                  <Input
+                    type="phone"
+                    placeholder="Telefon"
+                    id="phone"
+                    className="mt-2 bg-white/80 h-10 shadow-none"
+                  />
+                </div>
+                <div className="col-span-2">
+                  <Label htmlFor="message">Wiadomość</Label>
                   <Textarea
                     id="message"
-                    placeholder="Message"
+                    placeholder="Wiadomość"
                     className="mt-2 bg-white/80 shadow-none"
                     rows={6}
                   />
@@ -137,7 +146,7 @@ const Contact02Page = () => (
                 </div>
               </div>
               <Button className="mt-6 w-full" size="lg">
-                Submit
+                Wyślij wiadomość
               </Button>
             </form>
           </CardContent>

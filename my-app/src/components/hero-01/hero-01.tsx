@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import AnimatedContent from '../AnimatedContent';
-import Prism from '../Prism';
+// import Prism from '../Prism';
 import { RainbowButton } from '../ui/rainbow-button';
 
 const Hero01 = () => {
@@ -8,7 +8,7 @@ const Hero01 = () => {
     <div className="min-h-screen min-w-screen flex items-center justify-center px-6 relative">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {/* <Iridescence /> */}
-        <Prism />
+        {/* <Prism /> */}
       </div>
       <AnimatedContent
         distance={50}
@@ -31,10 +31,10 @@ const Hero01 = () => {
               Studio Mango
             </a>
           </Badge>
-          <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
+          <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter text-shadow-lg">
             Studio które pomaga Twojej firmie rosnąć
           </h1>
-          <p className="mt-6 md:text-lg">
+          <p className="mt-6 md:text-lg text-shadow-lg">
             Współpracujemy z firmami, aby tworzyć nowoczesne, responsywne i
             przyjazne dla użytkownika rozwiązania. Pokaż się w sieci z nami!
           </p>

@@ -25,7 +25,6 @@ function App() {
       <ScrollProgress />
       <div className=" flex flex-col items-center">
         <Navbar04Page />
-        {/* HERO SECTION */}
         {/* <div className="relative flex flex-col min-h-screen items-center justify-center text-center gap-5 w-full overflow-hidden">
           
           <div className="fixed z-50 backdrop-blur-md p-3 top-6 mx-auto flex gap-5 items-center bg-black/50 justify-between rounded-xl">

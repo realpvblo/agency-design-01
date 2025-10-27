@@ -1,4 +1,9 @@
-import { Logo01, Logo02, Logo03, Logo04 } from '@/components/logos-01/logos';
+const logos = [
+  { src: "/logos/wkreceniweko-logo.png", alt: "Logo 01" },
+  { src: "/logos/stelmaszekstudio-logo.png", alt: "Logo 02" },
+  { src: "/logos/oliwa-logo.png", alt: "Logo 03" },
+  // { src: "/logos/logo04.svg", alt: "Logo 04" },
+];
 
 const Logos01Page = () => {
   return (
@@ -9,10 +14,15 @@ const Logos01Page = () => {
         </p>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-14">
-          <Logo01 />
-          <Logo02 />
-          <Logo03 />
-          <Logo04 />
+          {logos.map((logo, index) => (
+            <img
+              key={index}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-8 w-auto opacity-80 transition hover:opacity-100"
+            />
+            // max-h-8 sm:h-10 sm:max-h-10 md:h-12 md:max-h-12
+          ))}
         </div>
       </div>
     </div>
