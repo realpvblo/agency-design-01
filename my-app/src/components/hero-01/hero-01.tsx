@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import AnimatedContent from '../AnimatedContent';
-// import Prism from '../Prism';
+import Prism from '../Prism';
 import { RainbowButton } from '../ui/rainbow-button';
 
 const Hero01 = () => {
@@ -8,7 +8,7 @@ const Hero01 = () => {
     <div className="min-h-screen min-w-screen flex items-center justify-center px-6 relative">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {/* <Iridescence /> */}
-        {/* <Prism /> */}
+        <Prism />
       </div>
       <AnimatedContent
         distance={50}
